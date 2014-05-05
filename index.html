@@ -22,12 +22,12 @@
 			 //this is your Base Assessment rate.
 			 var base = Math.round((document.calc.base.value = Math.round((baseRate/100) * payroll)));
 			 
-			 if(document.calc.disSur.value = "Surcharge"){
-				 //if user selected "surcharge"
-				var discountSurcharge = Math.round((base) + base * (document.calc.discountSurcharge.value/100));
+			 if (document.getElementById('discountRadioButton').checked) {
+				 //if user selected "Rebate"
+				var discountSurcharge = Math.round((base) - base * (document.calc.discountSurcharge.value/100));
 			 	}else{
-				 //if user selected "Discount"
-				 var discountSurcharge = Math.round((base) - base * (document.calc.discountSurcharge.value/100));
+				 //if user selected "Surcharge"
+				 var discountSurcharge = Math.round((base) + base * (document.calc.discountSurcharge.value/100));
 				 }
 				 
 			document.calc.disSurAssessment.value = discountSurcharge;
@@ -35,7 +35,7 @@
 			var maxSur = document.calc.maxSur.value = base * 2;
 			var maxDis = document.calc.maxDis.value = base * 0.5;
 			
-			document.calc.difference.value = maxSur + maxDis;
+			document.calc.difference.value = maxSur - maxDis;
 			
 			document.calc.osse.value = Math.round(base * 0.1);
 			
@@ -57,30 +57,30 @@
                         <td bgcolor="#c4e1c4" align="right"><input type="text" name="payroll" size="10"></td>
                     </tr>
                     <tr>
-                        <td colspan="2" bgcolor="#e8cece" align="right"><em>Base Assesement:</em> <input type="text" name="base" readonly="readonly" size="10"></td>
+                        <td colspan="2" bgcolor="#e8cece" align="right"><em>Base Assesement:</em> <input type="text" name="base" readonly size="10"></td>
                     </tr>
                     <tr>
-                        <td bgcolor="#eeeee">Discount or Surcharge</td>
-                        <td bgcolor="#c4e1c4" align="right">Discount<input name="disSur" type="radio" value="Discount"><br>
-                        Surcharge<input name="disSur" type="radio" value="Surcharge"><br>
-                        <em>Discount or Surcharge Percentage Amount:</em> <input type="text" name="discountSurcharge" size="10"></td>
+                        <td bgcolor="#eeeee">Rebate or Surcharge</td>
+                        <td bgcolor="#c4e1c4" align="right">Rebate<input name="disSur" id ="discountRadioButton" type="radio" value="Discount"><br>
+                        Surcharge<input name="disSur" type="radio" value=""><br>
+                        <em>Rebate or Surcharge Percentage Amount:</em> <input type="text" name="discountSurcharge" size="10"></td>
                     </tr>
                     <tr>
-                        <td colspan="2" bgcolor="#e8cece" align="right"><em>Discounted/Surcharged Assessment:</em> <input type="text" name="disSurAssessment" readonly="readonly" size="10"></td>
+                        <td colspan="2" bgcolor="#e8cece" align="right"><em>Rebate/Surcharged Assessment:</em> <input type="text" name="disSurAssessment" readonly size="10"></td>
                     </tr>
                     <tr>
                         <td colspan="2" bgcolor="#e8cece" align="right">
-                        	<em>Maximum Surcharge Amount:</em> <input type="text" name="maxSur" readonly="readonly" size="10"><br>
+                        	<em>Maximum Surcharge Amount:</em> <input type="text" name="maxSur" readonly size="10"><br>
                      </tr>
                      <tr>
                         <td colspan="2" bgcolor="#e8cece" align="right">
-                            <em>Maximum Discount Amount:</em> <input type="text" name="maxDis" readonly="readonly" size="10"</td>
+                            <em>Maximum Rebate Amount:</em> <input type="text" name="maxDis" readonly="readonly" size="10"></td>
                     </tr>
                      <tr>
-                        <td colspan="2" bgcolor="#e8cece" align="right"><em>Difference:</em> <input type="text" name="difference" readonly="readonly" size="10">
+                        <td colspan="2" bgcolor="#e8cece" align="right"><em>Difference:</em> <input type="text" name="difference" readonly size="10">
                     </tr>
                     <tr>
-                        <td colspan="2" bgcolor="#e8cece" align="right"><em>OSSE Rebate:</em> <input type="text" name="osse" readonly="readonly" size="10">
+                        <td colspan="2" bgcolor="#e8cece" align="right"><em>10% OSSE  Rebate:</em> <input type="text" name="osse" readonly size="10">
                     </tr>
                     <tr>
                         <td colspan="2"  bgcolor="#c4e1c4"align="right">
