@@ -45,17 +45,21 @@
 			
 			// -->
 			</script>
-            <style>
+            <style type="text/css">
+			
 			calc{
 				border-color:#0E9AD6;
 				font-family:'Open Sans',Arial, Helvetica, sans-serif
 			}
+			
+			
 			td{padding: 5px 2px 5px 5px !important;}
 			
 			input[name=baseRate],input[name=payroll],input[name=discountSurcharge] {
 			 	background-color:#BFD530; 
 				height:20px;
 				border:none;
+				text-align:center;
 			}
 			
 			input[name=base],input[name=disSurAssessment],input[name=maxSur],input[name=maxDis],input[name=difference],input[name=osse]{
@@ -63,14 +67,24 @@
 				height:20px;
 				border:none;
 				cursor:not-allowed;
+				text-align:center;
 			}
 			
 			input[name=calculateBtn],input[name=resetBtn]{
 				background-color:#0E9AD6;
 				border:none;
 				color:#fff;
-				padding:7px 15px;
-				font-size:16px;
+				padding:7px 22px;
+				font-size:14px;
+				font-weight:bold;
+				margin-right:4px;
+			}
+			input[name=calculateBtn]{
+				padding:7px 13px;	
+			}
+			
+			input[name=calculateBtn]:hover,input[name=resetBtn]:hover{
+				background:#BFD530
 			}
 			
 			#assessment-table span.td-titles{
@@ -96,25 +110,15 @@
 			}
 			.clear{clear:both;}
 			
+			table#assessment-table,#assessment-table tr,#assessment-table td{
+			 	border:1px solid #0E9AD6;	
+			}
 			
 			input[type="radio"] {
-				display:none;
+				height:15px;
 			}
-			input[type="radio"] + label span {
-				display:inline-block;
-				width:19px;
-				height:19px;
-				margin:-1px 4px 0 0;
-				vertical-align:middle;
-				background:url(check_radio_sheet.png) left top no-repeat;
-				cursor:pointer;
-			}
-			input[type="radio"]:checked + label span {
-				background:url(check_radio_sheet.png) -19px top no-repeat;
-			}
-			
-			
-			
+	
+
 			</style>
            
 			<form name="calc" method="POST" id="assessment-calc">
